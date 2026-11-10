@@ -1,0 +1,11 @@
+{
+  "name": "funcoes",
+  "version": "1.0.0",
+  "description": "pt-br\r ------------------------\r Esse repositório é pras coisa da faculdade.\r ------------------------\r en-us\r ========================\r Just for college things.\r ========================",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
