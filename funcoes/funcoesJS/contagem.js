@@ -1,18 +1,32 @@
-function contagem(dados, n) {
-  let contador = 0;
-  let primeiroDado = dados[0];
-  
-  for (let i = 0; i < dados.length; i++) {
-    let valorAtual = dados[i];
-    if (valorAtual >= primeiroDado && valorAtual <= n) {
-      contador = contador + 1;
-    }
+/**
+ * Recebe um array de números e conta quantos números inteiros existem
+ * entre o primeiro e o último elemento do array de entrada.
+ *
+ * @param {number[]} arr
+ * @returns {{ contagemIntervalo: number, contagemElementosArray: number }}
+ */
+function contarInteirosEntrePrimeiroEUltimo(arr) {
+  if (!Array.isArray(arr) || arr.length === 0) {
+    return { contagemIntervalo: 0, contagemElementosArray: 0 };
   }
-  return contador;
+
+  const primeiro = arr[0];
+  const ultimo = arr[arr.length - 1];
+
+  const inicio = Math.min(primeiro, ultimo);
+  const fim = Math.max(primeiro, ultimo);
+
+  // 1. Quantidade de inteiros no intervalo matemático estrito (inicio, fim)
+  const minInt = Math.floor(inicio) + 1;
+  const maxInt = Math.ceil(fim) - 1;
+  const contagemIntervalo = Math.max(0, maxInt - minInt + 1);
+
+  // 2. Quantidade de elementos inteiros presentes dentro do array no intervalo (inicio, fim)
+  const contagemElementosArray = arr.filter(
+    (num) => Number.isInteger(num) && num > inicio && num < fim,
+  ).length;
+
+  return { contagemIntervalo, contagemElementosArray };
 }
 
-let conjunto = [5, 12, 6, 8, 10, 3];
-let valorN = 9;
-
-let resultado = contagem(conjunto, valorN);
-console.log("Existem " + resultado + " números entre " + conjunto[0] + " e " + valorN + " nesta lista.");
+module.exports = { contarInteirosEntrePrimeiroEUltimo };

@@ -1,20 +1,13 @@
-function somatorio(numeros) {
-  let soma = 0;
-  for (let i = 0; i < numeros.length; i++) {
-    soma = soma + numeros[i];
+/**
+ * Recebe um array de números e retorna a soma de todos os elementos (Sum Array).
+ * @param {number[]} arr
+ * @returns {number}
+ */
+function calcularSomatorio(arr) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError("Esperado um array de números");
   }
-  return soma;
+  return arr.reduce((acc, curr) => acc + curr, 0);
 }
 
-let lista = []; 
-let numero;
-
-do {
-
-  numero = parseInt(prompt("Digite um número (ou 0 para terminar):"));
-
-  if (numero !== 0) {
-    lista.push(numero);
-  }
-} while (numero !== 0);
-console.log("O somatório é:", somatorio(lista));
+module.exports = { calcularSomatorio };

@@ -1,18 +1,19 @@
-function ehPrimo(n) {
-if (n <= 1) return false;
+/**
+ * Verificação de número primo (Prime Number Checker).
+ * @param {number} n
+ * @returns {boolean}
+ */
+function ePrimo(n) {
+  if (typeof n !== 'number' || isNaN(n) || !Number.isInteger(n) || n <= 1) {
+    return false;
+  }
+  if (n <= 3) return true;
+  if (n % 2 === 0 || n % 3 === 0) return false;
 
-
-for (let i = 2; i < n; i++) {
-    if (n % i === 0) {
-      return false;
-    }
-
+  for (let i = 5; i * i <= n; i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) return false;
+  }
+  return true;
 }
-return true;
-}
-let numero = parseInt(prompt("Digite um número: "));
-if (ehPrimo(numero)) {
-    console.log(numero + " é um número primo.");
-} else {
-    console.log(numero + " não é um número primo.");
-};
+
+module.exports = { ePrimo };
