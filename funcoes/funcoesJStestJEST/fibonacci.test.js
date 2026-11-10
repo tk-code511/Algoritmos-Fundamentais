@@ -1,4 +1,4 @@
-const fibonacci = require("../funcoes/fibonacci");
+const fibonacci = require("../funcoesJS/fibonacci");
 
 test("os 10 primeiros números da sequência de Fibonacci devem ser os corretos", () => {
   expect(fibonacci.gerarSequenciaFibonacci(10)).toMatchObject([

@@ -1,4 +1,4 @@
-const contagem = require("../funcoes/contagem");
+const contagem = require("../funcoesJS/contagem");
 
 test("deve contar corretamente inteiros no intervalo entre o primeiro e o último elemento para o primeiro array teste", () => {
   expect(

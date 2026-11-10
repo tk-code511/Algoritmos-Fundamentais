@@ -1,4 +1,4 @@
-const somatorio = require("../funcoes/somatorio");
+const somatorio = require("../funcoesJS/somatorio");
 
 test("deve somar corretamente os elementos de um array de números positivos", () => {
   expect(somatorio.calcularSomatorio([10, 20.5, 30, 4.5])).toBe(65);
