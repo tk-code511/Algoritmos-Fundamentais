@@ -1,0 +1,14 @@
+{
+  "name": "funcoesjstestjest",
+  "version": "1.0.0",
+  "main": "contagem.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
